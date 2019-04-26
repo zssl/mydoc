@@ -1,0 +1,21 @@
+[gui]
+	recentrepo = D:/document/work/project/other/sd2011/sd2011_digtop_v2p0
+[user]
+	name = zhangsheng
+	email = zhangsheng@silan.com
+[core]
+	editor = vim
+	excludesfile = C:/Users/zhangsheng/.gitignore
+
+[diff]
+	tool = tortoisediff
+[difftool "tortoisediff"]
+	cmd = TortoiseMerge -base "$LOCAL" -theirs "$REMOTE"
+[difftool]
+	prompt = false
+[merge]
+	tool = tortoise
+[mergetool "tortoise"]
+	cmd = TortoiseMerge -base "$BASE" -theirs "$REMOTE" -mine "$LOCAL" -merged "$MERGED"
+[mergetool]
+	prompt = false
