@@ -1,3 +1,5 @@
+project location: https://github.com/zssl/mydoc
+
 Git linux  source install guide
 
 1. download src tar ball from https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.21.0.tar.gz
