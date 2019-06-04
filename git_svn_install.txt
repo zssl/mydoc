@@ -1,0 +1,44 @@
+Git linux  source install guide
+
+1. download src tar ball from https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.21.0.tar.gz
+2. in the directory  do: tar xzvf git-2.21.0.tar.gz
+3. enter directory git-2.21.0
+4. do: ./configure --prefix=/git/install/path/
+5. do: make
+6. do: make install
+
+for this process the command "git svn" may not work well
+may throw out message "can't locate SVN/Core.pm in @INC" 
+below need to do:
+
+1. download src tar ball from https://mirrors.tuna.tsinghua.edu.cn/apache/subversion/
+2. in the directory do: tar xzvf subversion-1.11.1.tar.gz
+3. enter directory subversion-1.11.1
+4. do: ./configure --prefix=/svn/install/path --with-apr=/apr/install/path --with-apr-util=/apr/install/path --with-sqlite=/sqlite/install/path --with-zlib=/zlib/install/path --with-lz4=internal --with-utf8proc=internal PERL=/usr/bin/perl
+5. do: make
+6. do: make swig-pl          | tee m.log
+7. do: make check-swig-pl    | tee -a m.log
+8. do: make install
+9. do: make install-swig-pl  | tee -a m.log
+
+after this you will see two directory in 
+/svn/install/path/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/auto
+/svn/install/path/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/SVN
+
+copy these two directorys to
+/git/install/path/share/perl5
+
+and add LD_LIBRARY_PATH with /svn/install/path/lib
+
+then git svn may work
+
+when install svn may need to install "apr-1.5.2" "apr-util-1.5.4", "zlib-1.2.11", "sqlite-autoconf-3280000" first
+these can be done by 
+./configre --prefix=/install/path
+make
+make install
+
+download from 
+https://mirrors.tuna.tsinghua.edu.cn/apache/apr/
+http://zlib.net/zlib-1.2.11.tar.gz
+https://sqlite.org/2019/sqlite-autoconf-3280000.tar.gz
