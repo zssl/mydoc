@@ -1,0 +1,12 @@
+{
+    "workbench.activityBar.visible": true,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "files.associations": {
+        "*.v": "systemverilog"
+    },
+    "files.eol": "\n",
+    "[systemverilog]": {},
+    "editor.showFoldingControls": "always",
+    "workbench.colorTheme": "Default Light+",
+    "editor.minimap.enabled": false
+}
